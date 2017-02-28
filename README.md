@@ -22,5 +22,5 @@ Current Models are
   - Some toy models
   - Bayesian logistic regression
   - Bayesian neural networks for classification and regression
-  
-We will add a simple matrix factorization model for collaborative filtering soon. Further plans include topic models.
+
+We will add a simple matrix factorization model for collaborative filtering soon.
