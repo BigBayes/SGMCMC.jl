@@ -27,11 +27,11 @@ To install the required packages please run `julia install.jl`.
 
 To run a SGMCMC sampler in SGMCMC.jl you need three components:
 
-    - the model: a DataModel object `dm`
-    - the gradient function: `grad = DataModel.getgrad(dm)`
+    - the model: a DataModel object `dm`, encompassing the data as well as the model structure
+    - the (stochastic) gradient function: `grad = DataModel.getgrad(dm)`
     - a sampler state `s`
 
-The function `sample!(s,grad)` performs a single update of a sampler state.
+The function `sample!(s,grad)` then performs a single update of a sampler state.
 
 Check out some of the examples or have a look at the code!
 
