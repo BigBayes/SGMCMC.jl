@@ -42,17 +42,3 @@
         @test sum(abs(g(vcat(zeros(3),x[2:4],0,x[1]))-vcat(-gradient[2:4],gradient[2:4],-gradient[1],gradient[1])))<1e-4
     end
 end
-
-
-srand(1)
-
-
-nmax = 100;
-d = 2;
-dm = LogisticRegression.artificial_logreg_dm(nmax,d,seed=1)
-import StatsBase
-ss=100000
-gl=LogisticRegression.get_var_red_stoch_grad_log_posterior(dm,1,nobs=10)
-tmp=hcat([ gl(zeros(d)) for i=1:ss ] ...)
-
-@test norm(StatsBase.mean_and_cov(tmp,2)[2]-LogisticRegression.VarFromCoef(LogisticRegression.TaylorVarCoef(dm, zeros(d),nobs=10)...,10,1))<0.1

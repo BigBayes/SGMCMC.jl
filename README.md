@@ -5,16 +5,14 @@ SGMCMC.jl is a Julia test bed for stochastic gradient Markov chain Monte Carlo a
 
 # Samplers
 Currently SGMCMC.jl includes:
-  - SGLD
-  - SGHMC
-  - SGNHT
+  - Stochastic gradient Langevin dynamics
+  - Stochastic gradient Hamiltonian Monte Carlo
+  - Stochastic gradient Nosé-Hoover thermostat
   - stochastic gradient relativistic HMC
   - stochastic gradient relativistic thermostat
   - preconditioned SGLD
   - SGD methods to compare
   - HMC as a baseline
-
-We will add more samplers over time. Please consider adding your own sampler.
 
 # Models
 Current Models are
@@ -22,5 +20,18 @@ Current Models are
   - Some toy models
   - Bayesian logistic regression
   - Bayesian neural networks for classification and regression
+  - Matrix factorization for collaborative filtering
 
-We will add a simple matrix factorization model for collaborative filtering soon.
+# Getting started
+To run a SGMCMC sampler in SGMCMC.jl you need three components:
+    - the model: a DataModel object `dm`
+    - the gradient function: `grad = DataModel.getgrad(dm)`
+    - a sampler state `s`
+
+The function `sample!(s,grad)` performs a single update of a sampler state.
+
+Check out some of the examples or have a look at the code!
+
+# Acknowledgements
+
+This package was put together by Leonard Hasenclever based research code from various projects in the [Oxford Machine Learning and Computational Statistics group](http://mlcs.stats.ox.ac.uk/learning). Contributors include Valerio Perrone, Xiaoyu Lu, Yee Whye Teh and Sebastian Vollmer. Some of the matrix factorization code is based on code by Sungjin Ahn.

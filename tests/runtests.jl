@@ -1,5 +1,6 @@
 push!(LOAD_PATH, "../src")
 push!(LOAD_PATH, "../src/models")
+push!(LOAD_PATH, "../src/models/c_functions")
 ENV["MOCHA_USE_NATIVE_EXT"] = "true"
 ENV["OMP_NUM_THREADS"] = 1
 using Mocha
@@ -11,7 +12,9 @@ using MochaClassification
 using Base.Test
 using GaussianMixture
 using Banana
+using MatrixFactorisation
 using Logging
+import StatsBase
 Logging.configure(level=ERROR)
 ### test data models
 @testset "Data models" begin
@@ -20,6 +23,7 @@ Logging.configure(level=ERROR)
     include("test_logistic_regression.jl")
     include("test_mochaclassification.jl")
     include("test_mocharegression.jl")
+    include("test_matrixfactorisation.jl")
 end
 ### test optimizers
 include("test_opt.jl")

@@ -4,7 +4,7 @@ module SGMCMC
     abstract SamplerState
     export AdamState, SGLDAdamState
     export SamplerState,HMCState,RelHMCState,RelSGHMCState, RelSGNHTState, SGHMCState, sample!
-    export SGLDState, SGNHTState, mSGNHTState
+    export SGLDState, SGNHTState, mSGNHTState, SGDState, RelFrozenState, SantaState
     export SGLDAdagradState, AdagradState
     export SGLDRMSPropState
 
