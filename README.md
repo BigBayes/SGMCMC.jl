@@ -24,6 +24,7 @@ Current Models are
 
 # Getting started
 To run a SGMCMC sampler in SGMCMC.jl you need three components:
+
     - the model: a DataModel object `dm`
     - the gradient function: `grad = DataModel.getgrad(dm)`
     - a sampler state `s`
