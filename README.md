@@ -23,6 +23,8 @@ Current Models are
   - Matrix factorization for collaborative filtering
 
 # Getting started
+To install the required packages please run `julia install.jl`.
+
 To run a SGMCMC sampler in SGMCMC.jl you need three components:
 
     - the model: a DataModel object `dm`
